@@ -1,6 +1,10 @@
 import Card from "./Card";
 
+
 function Cards({ courses }) {
+// const [linkedCourses, setLikedCourses] = useState([]);
+
+
 // Method 1: 
   // function getCourses() {
   //   let allCourses = [];
@@ -17,13 +21,16 @@ function Cards({ courses }) {
    return Object.values(courses ?? {}).flatMap((courseCategory)=>courseCategory)
  }
 
- 
  const allCourses = getCourses();
 
 	return (
-		<div>
+		<div className="flex flex-wrap justify-center gap-4 mb-4">
 			{allCourses.map((course) => (
-				<Card course={course} />
+				<Card 
+				course={course}  
+				// linkedCourses={linkedCourses}
+				// setLikedCourses= {setLikedCourses}
+				/>
 			))}
 		</div>
 	);

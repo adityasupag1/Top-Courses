@@ -1,4 +1,5 @@
 
+
 # 🎓 Top Courses App  
 
 A simple React.js project that displays a list of courses with category-based filtering (Development, Business, Design, Lifestyle). Users can browse and filter courses dynamically, making it easier to explore relevant topics.  
@@ -7,8 +8,6 @@ A simple React.js project that displays a list of courses with category-based fi
 
 ## 🔗 Live Demo  
 👉 [View Project Here](https://new-top-courses.netlify.app/  )
-
-*(Replace with your actual deployed Netlify/Vercel link)*  
 
 ---
 
