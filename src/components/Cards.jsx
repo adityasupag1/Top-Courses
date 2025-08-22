@@ -1,4 +1,4 @@
-import Card from "./card";
+import Card from "./Card";
 
 function Cards({ courses }) {
 // Method 1: 
@@ -19,7 +19,7 @@ function Cards({ courses }) {
 
  
  const allCourses = getCourses();
- 
+
 	return (
 		<div>
 			{allCourses.map((course) => (
