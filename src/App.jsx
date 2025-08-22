@@ -10,6 +10,7 @@ const App = () => {
 
   const [courses, setCourses] = useState(null)
   const [loading, setLoading] = useState(true)
+  const [category, setCategory] = useState(filterData[0].title);
 useEffect (
   ()=>{
     const fetchData = async()=>{
@@ -30,15 +31,19 @@ useEffect (
 )
 
   return (
-    <div className='min-h-screen flex flex-col'>
+    <div className='min-h-screen flex flex-col bg-[#4A4E69]'>
        <Navbar/>
 
       <div className='bg-[#4A4E69]'>
-         <Filter filterData={filterData} />
+         <Filter 
+         filterData={filterData} 
+         category = {category}
+         setCategory= {setCategory}
+         />
 
       <div className='w-11/12 max-w-[1200px] mx-auto flex flex-wrap justify-center items-center min-h-[50vh]'>
          {
-        loading ? (<Spinner/>) : (  <Cards courses = {courses}/>)
+        loading ? (<Spinner/>) : (  <Cards courses = {courses}  category = {category}/>)
        }
       </div>
       </div>

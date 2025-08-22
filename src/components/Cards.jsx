@@ -1,25 +1,31 @@
 import Card from "./Card";
 import { useState } from "react";
 
-function Cards({ courses }) {
+function Cards({ courses,category }) {
  const [linkedCourses, setLikedCourses] = useState([]);
 
 
 // Method 1: 
-  // function getCourses() {
-  //   let allCourses = [];
-	// 	Object.values(courses ?? {}).forEach((courseCategory) => {
-	// 		courseCategory.forEach((course) => {
-	// 			allCourses.push(course);
-	// 		});
-	// 	});
-	// 	return allCourses;
-	// }
+  function getCourses() {
+		if(category==="All"){
+    let allCourses = [];
+			Object.values(courses ?? {}).forEach((courseCategory) => {
+			courseCategory.forEach((course) => { 
+				allCourses.push(course);
+			});
+		});
+		return allCourses;
+	}
+	else{
+		// only specific category ka data pass krunga
+    return courses[category]
+	}
+	}
 
 // Method 2: 
- function getCourses(){
-   return Object.values(courses ?? {}).flatMap((courseCategory)=>courseCategory)
- }
+//  function getCourses(){
+//    return Object.values(courses ?? {}).flatMap((courseCategory)=>courseCategory)
+//  }
 
  const allCourses = getCourses();
 

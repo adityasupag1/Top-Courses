@@ -34,7 +34,9 @@ const Card = ({ course, linkedCourses, setLikedCourses }) => {
         <p className="text-white font-semibold text-lg leading-6">
           {course.title}
         </p>
-        <p className="mt-2 text-white">{course.description}</p>
+        <p className="mt-2 text-white">
+          {course.description.length < 100 ? (course.description+"...") : (course.description.substr(0,100)+"...")}
+        </p>
       </div>
     </div>
   );
