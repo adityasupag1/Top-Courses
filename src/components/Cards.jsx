@@ -1,8 +1,8 @@
 import Card from "./Card";
-
+import { useState } from "react";
 
 function Cards({ courses }) {
-// const [linkedCourses, setLikedCourses] = useState([]);
+ const [linkedCourses, setLikedCourses] = useState([]);
 
 
 // Method 1: 
@@ -27,9 +27,10 @@ function Cards({ courses }) {
 		<div className="flex flex-wrap justify-center gap-4 mb-4">
 			{allCourses.map((course) => (
 				<Card 
+				key={course.id} 
 				course={course}  
-				// linkedCourses={linkedCourses}
-				// setLikedCourses= {setLikedCourses}
+				linkedCourses={linkedCourses}
+				setLikedCourses= {setLikedCourses}
 				/>
 			))}
 		</div>
